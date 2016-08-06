@@ -1,0 +1,133 @@
+body,ul,li{
+  padding: 0;
+  margin: 0;
+}
+body{
+  overflow: hidden;
+  background: rgba(120,160,156,1);
+}
+%center{
+  position: absolute;
+  top:0;left: 0;
+  bottom: 0;right: 0;
+  margin: auto;
+}
+$width:600px;
+.qipan{
+  @extend %center;
+  width: $width;
+  height: $width;
+  background: url("beijing.jpg");
+  background-size:cover;
+  background: rgba(191,251,224,0.6);
+  border: 2px solid black;
+  opacity: 0;
+}
+.qipan1{
+  opacity: 0;
+  @extend %center;
+  width: $width;
+  height: $width;
+  background: url("beijing.jpg");
+  background-size:cover;
+}
+.qizi{
+  position: relative;
+  z-index: 2;
+  width: $width/15-6;
+  height: $width/15-6;
+  margin: 3px;
+  float: left;
+  border-radius: 50%;
+}
+.hei{
+  background: #000;
+}
+.bai{
+  background: #fff;
+}
+.hang{
+  position: absolute;
+  display: block;
+  height:1px ;
+  width: $width - $width/15 ;
+  background: #000000;
+  left: $width/30;
+}
+.lie{
+  position: absolute;
+  display: block;
+  width: 1px;
+  height: $width - $width/15  ;
+  background: #000000;
+  top:$width/30;
+}
+@for $i from 0 through 14 {
+  .qipan b:nth-of-type(#{$i+1}) {
+    top: $width/30+$i*$width/15;
+  }
+  .qipan i:nth-of-type(#{$i+1}) {
+    left: $width/30+$i*$width/15;
+  }
+}
+
+.qipan span{
+  width: $width/60;
+  height: $width/60;
+  border-radius: 50%;
+  background: black;
+  position: absolute;
+  transform: translate3d(-45%,-45%,0);
+  transition: all 1.2s ease;
+  opacity: 0;
+
+&:nth-of-type(1){
+  top:3.5*$width/15;
+  left: 3.5*$width/15;
+ transition-delay: 0s;
+  opacity: 1;
+}
+  &:nth-of-type(2){
+    top:3.5*$width/15;
+    left: 11.5*$width/15;
+    transition-delay:.3s;
+    opacity: 1;
+  }
+  &:nth-of-type(3){
+    top:7.5*$width/15;
+    left: 7.5*$width/15;
+    transition-delay:.6s;
+    opacity: 1;
+  }
+  &:nth-of-type(4){
+    top:11.5*$width/15;
+    left: 3.5*$width/15;
+    transition-delay:.9s;
+    opacity: 1;
+  }
+  &:nth-of-type(5){
+    top:11.5*$width/15;
+    left:11.5*$width/15;
+    transition-delay:1.2s;
+    opacity: 1;
+  }
+
+
+}
+
+.kai{
+  width: 160px;
+  height: 80px;
+  background: red;
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+  line-height: 80px;
+  border-radius: 10px;
+  z-index: 20;
+  cursor: pointer;
+}
